@@ -1,5 +1,5 @@
 const airtable = require("airtable")
-const base = airtable.base("appZQ4hJRTJWsowaO")
+const base = airtable.base("")
 
 const testing = base("Testing")
 
