@@ -9,9 +9,9 @@ app.use(bp.urlencoded({ extended: false }));
 app.use(bp.json());
 app.use(require("morgan")("dev"));
 
-const AIRTABLEAPI = "keyoeqsamcsg1tG6e"; 
-const AIRTABLEBASEID = "appZQ4hJRTJWsowaO"; 
-const AIRTABLETABLENAME = "Testing"; 
+const AIRTABLEAPI = ""; 
+const AIRTABLEBASEID = ""; 
+const AIRTABLETABLENAME = ""; 
 
 const port = process.env.PORT || 3000;
 
