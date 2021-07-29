@@ -1,0 +1,10 @@
+####{BSB GENERATED: NO EDIT
+FLG -ppx '/Users/shrey.anchalwar/rescript-airtable-binding/node_modules/rescript/darwin/bsc.exe -as-ppx '
+S /Users/shrey.anchalwar/rescript-airtable-binding/node_modules/rescript/lib/ocaml
+B /Users/shrey.anchalwar/rescript-airtable-binding/node_modules/rescript/lib/ocaml
+FLG -w +a-4-9-20-40-41-42-50-61-102
+S /Users/shrey.anchalwar/rescript-airtable-binding/node_modules/rescript-express/lib/ocaml
+B /Users/shrey.anchalwar/rescript-airtable-binding/node_modules/rescript-express/lib/ocaml
+S src
+B lib/bs/src
+####BSB GENERATED: NO EDIT}

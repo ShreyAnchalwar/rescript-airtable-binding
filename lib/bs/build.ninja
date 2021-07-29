@@ -1,0 +1,14 @@
+rescript = 1
+g_finger := /Users/shrey.anchalwar/rescript-airtable-binding/node_modules/rescript-express/lib/ocaml/install.stamp
+rule astj
+  command = /Users/shrey.anchalwar/rescript-airtable-binding/node_modules/rescript/darwin/bsc.exe  -bs-v 9.1.4  -absname -bs-ast -o $out $i
+o src/Index.ast : astj ../../src/Index.res
+rule deps
+  command = /Users/shrey.anchalwar/rescript-airtable-binding/node_modules/rescript/darwin/bsb_helper.exe -hash 157a7fb11c5b92151d3e1f1443265728 $in
+  restat = 1
+o src/Index.d : deps src/Index.ast
+rule mij
+  command = /Users/shrey.anchalwar/rescript-airtable-binding/node_modules/rescript/darwin/bsc.exe -I src -I /Users/shrey.anchalwar/rescript-airtable-binding/node_modules/rescript-express/lib/ocaml   -bs-package-name rescript-airtable-binding -bs-package-output es6-global:$in_d:.bs.js -bs-v $g_finger $i
+  dyndep = 1
+  restat = 1
+o src/Index.cmj src/Index.cmi ../../src/Index.bs.js : mij src/Index.ast
