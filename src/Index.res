@@ -1,22 +1,36 @@
-open Express
+type key = {apiKey: string}
+type airtable
+type table
+type base = string => table
+type selectParam = {maxRecords: int, view: string}
+type rows
+type results
 
-let app = expressCjs();
+@module("airtable") @new
+external createAirtable: key => airtable = "default"
 
-app->use(jsonMiddleware())
-app->use(urlencodedMiddlewareWithOptions({"extended": true}))
+@send
+external base: (airtable, string) => base = "base"
 
-let base = base("Test")
-let nameTable = base->Base.table("Testing")
-let record = nameTable->Table.find("Name")
+@send
+external select: (table, selectParam) => rows = "select"
 
-app->get("/view", (req,res) => {
-    open Airtable
-    configure({
-      apiKey: DotEnv.airtableAPIKey->Utils.getNullableExn(~errMsg="Missing Airtable API Key")
-    })
+@send
+external firstPage: rows => Js.Promise.t<results> = "firstPage"
+
+let base = createAirtable({apiKey: "keyoeqsamcsg1tG6e"})->base("appZQ4hJRTJWsowaO")
+let table = base("Testing")
+
+let getResults = table =>
+  table->select({maxRecords: 10, view: "Grid view"})->firstPage
+
+getResults(table)
+|> Js.Promise.then_(results => {
+  Js.log(results)
+  Js.Promise.resolve()
 })
-
-// Js.log("Base")
-// Js.log(base)
-// Js.log("Table")
-// Js.log()
+|> Js.Promise.catch(error => {
+  Js.log(error)
+  Js.Promise.resolve()
+})
+|> ignore
