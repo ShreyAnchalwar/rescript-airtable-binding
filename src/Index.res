@@ -23,11 +23,11 @@ external firstPage: rows => Js.Promise.t<results> = "firstPage"
 
 //////////////////////////////////////////////////////////////
 
-let base = createAirtable({apiKey: "keyoeqsamcsg1tG6e"})->base("appZQ4hJRTJWsowaO")
-let table = base("Testing")
+let base = createAirtable({apiKey: ""})->base("") // Your AirTable API Key and Base ID goes here
+let table = base("") // Table name goes here
 
 let getResults = table =>
-  table->select({maxRecords: 10, view: "Grid view"})->firstPage
+  table->select({maxRecords: 5, view: "Grid view"})->firstPage     //Can select the number of rows and type of view
 
 getResults(table)
 |> Js.Promise.then_(results => {
