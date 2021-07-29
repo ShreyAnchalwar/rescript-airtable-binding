@@ -1,16 +1,5 @@
+Connect to AirTable API using AirTable npm package in ReScript 
 
+Provides ReScript bindings for the AirTable npm package
 
-# Build
-```
-npm run build
-```
-
-# Watch
-
-```
-npm run watch
-```
-
-
-# Editor
-If you use `vscode`, Press `Windows + Shift + B` it will build automatically
+Also implements a GET request to obtain data from a base in AirTable
