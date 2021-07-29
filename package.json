@@ -1,5 +1,5 @@
 {
-  "name": "rescript-express-recipes",
+  "name": "rescript-airtable-binding",
   "version": "0.1.0",
   "type": "module",
   "scripts": {
@@ -11,7 +11,7 @@
   "keywords": [
     "Rescript"
   ],
-  "author": "",
+  "author": "Shrey Anchalwar",
   "license": "MIT",
   "devDependencies": {
     "bs-fetch": "^0.6.2",
