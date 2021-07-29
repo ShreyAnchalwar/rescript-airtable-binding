@@ -11,7 +11,6 @@
   },
   "suffix": ".bs.js",
   "bs-dependencies": [
-    "rescript-express",
-    "bs-fetch"
+    "rescript-express"
   ]
 }

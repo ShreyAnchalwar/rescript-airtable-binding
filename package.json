@@ -14,20 +14,11 @@
   "author": "Shrey Anchalwar",
   "license": "MIT",
   "devDependencies": {
-    "bs-fetch": "^0.6.2",
     "rescript": "^9.1.4"
   },
   "dependencies": {
     "airtable": "^0.11.1",
-    "body-parser": "^1.19.0",
-    "cors": "^2.8.5",
-    "dotenv": "^10.0.0",
-    "dotenv-flow": "^3.2.0",
-    "express": "^4.17.1",
-    "flow": "^0.2.3",
     "fs": "0.0.1-security",
-    "morgan": "^1.10.0",
-    "node-fetch": "^2.6.1",
     "rescript-express": "^0.4.1"
   }
 }
