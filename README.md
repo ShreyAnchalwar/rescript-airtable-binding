@@ -1,4 +1,4 @@
-Connect to AirTable API using AirTable npm package in ReScript 
+# Connect to AirTable API using AirTable npm package in ReScript 
 
 Provides ReScript bindings for the AirTable npm package
 
