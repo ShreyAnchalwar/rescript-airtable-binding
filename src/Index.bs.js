@@ -4,10 +4,10 @@ import * as Curry from "../node_modules/rescript/lib/es6/curry.js";
 import Airtable from "airtable";
 
 var base = new Airtable({
-        apiKey: "keyoeqsamcsg1tG6e"
-      }).base("appZQ4hJRTJWsowaO");
+        apiKey: ""
+      }).base("");
 
-var table = Curry._1(base, "Testing");
+var table = Curry._1(base, "");
 
 function getResults(table) {
   return table.select({
