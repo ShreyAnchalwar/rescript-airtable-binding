@@ -4,8 +4,17 @@ Provides ReScript bindings for the AirTable npm package
 
 Also implements a GET request to obtain data from a base in AirTable
 
-'''npm i
+Install packages:
+```
+npm i
+```
 
-'''npm run-script build
+Build:
+```
+npm run-script build
+```
 
-'''npm start
+Run:
+```
+npm start
+```
