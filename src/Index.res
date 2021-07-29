@@ -23,7 +23,7 @@ external firstPage: rows => Js.Promise.t<results> = "firstPage"
 
 //////////////////////////////////////////////////////////////
 
-let base = createAirtable({apiKey: ""})->base("") // Your AirTable API Key and Base ID goes here
+let base = createAirtable({apiKey: ""})->base("") // Your Airtable API Key and Base ID goes here
 let table = base("") // Table name goes here
 
 let getResults = table =>
