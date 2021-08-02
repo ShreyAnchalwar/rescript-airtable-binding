@@ -1,7 +1,14 @@
 {
-  "name": "rescript-airtable-binding",
+  "name": "@shreyanchalwar/rescript-airtable-binding",
   "version": "0.1.0",
+  "description": "A CLI to run Airtable",
   "type": "module",
+  "bin": {
+    "airtable-cli": "bin/airtable"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "clean": "rescript clean",
     "build": "rescript build",
@@ -9,7 +16,9 @@
     "start": "node -r dotenv/config src/Index.bs.js"
   },
   "keywords": [
-    "Rescript"
+    "Rescript",
+    "cli",
+    "create-airtable"
   ],
   "author": "Shrey Anchalwar",
   "license": "MIT",
@@ -18,7 +27,10 @@
   },
   "dependencies": {
     "airtable": "^0.11.1",
+    "esm": "^3.2.25",
     "fs": "0.0.1-security",
+    "lodash": "^4.17.21",
+    "meow": "^10.1.1",
     "rescript-express": "^0.4.1"
   }
 }
