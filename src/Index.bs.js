@@ -2,6 +2,11 @@
 
 import * as Curry from "../node_modules/rescript/lib/es6/curry.js";
 import Airtable from "airtable";
+import Bottleneck from "bottleneck";
+
+var rateLimiter = new Bottleneck({
+      minTime: 210
+    });
 
 var base = new Airtable({
         apiKey: ""
