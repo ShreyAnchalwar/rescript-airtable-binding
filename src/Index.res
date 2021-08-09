@@ -8,6 +8,11 @@ type base = string => table
 type selectParam = {maxRecords: int, view: string}
 type rows
 type results
+type rps = {minTime: int}
+type bottleneck
+
+@module("bottleneck") @new
+external createBottleneck: rps => bottleneck = "default"
 
 @module("airtable") @new
 external createAirtable: key => airtable = "default"
@@ -22,6 +27,8 @@ external select: (table, selectParam) => rows = "select"
 external firstPage: rows => Js.Promise.t<results> = "firstPage"
 
 //////////////////////////////////////////////////////////////
+
+let rateLimiter = createBottleneck({minTime: 1050/5}) 
 
 let base = createAirtable({apiKey: ""})->base("") // Your Airtable API Key and Base ID goes here
 let table = base("") // Table name goes here
