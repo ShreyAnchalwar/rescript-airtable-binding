@@ -10,9 +10,13 @@ type rows
 type results
 type rps = {minTime: int}
 type bottleneck
+type 
 
 @module("bottleneck") @new
 external createBottleneck: rps => bottleneck = "default"
+
+@send
+external wrap: =>  = "wrap"
 
 @module("airtable") @new
 external createAirtable: key => airtable = "default"
@@ -46,3 +50,42 @@ getResults(table)
   Js.Promise.resolve()
 })
 |> ignore
+
+
+/*
+rateLimiter.wrap(base(tableAI).select({
+        view: 'Grid View',
+        pageSize: 10000 
+      }).eachPage(function page(records, fetchNextPage) {
+                
+        if (pageNumber == request.params.page) {
+
+          let results = [];
+
+          records.forEach(function(record) {
+            
+            var result = {
+              id: record.get('id'),
+            }
+
+            results.push(result);
+          });
+
+          JS.log("Returning records");
+          sendResultWithResponse(results, response);
+
+        } else {
+          pageNumber++;
+          fetchNextPage();
+        }
+
+      }, function done(error) {
+          sendResultWithResponse([], response);
+      }));
+
+    }
+
+  }
+
+}
+*/
